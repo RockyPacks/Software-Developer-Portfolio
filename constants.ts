@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'AI Bias Audit Analyzer',
-    date: '2023',
+    date: '2025',
     description: 'A collaborative project focused on analyzing and auditing for bias in datasets and machine learning models. A critical tool for responsible AI development.',
     imageUrl: '/Bias.jpg',
     tags: ['Data Science', 'Python', 'AI Ethics', 'GitHub'],
