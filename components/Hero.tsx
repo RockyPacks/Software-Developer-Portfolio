@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         <div className="relative w-48 h-64 sm:w-56 sm:h-72 md:w-full md:h-full max-h-[480px] group mx-auto order-1 md:order-2 flex items-center justify-center">
           <div className="absolute -inset-1 bg-blue-500/50 dark:bg-accent/50 blur-xl opacity-0 group-hover:opacity-75 transition-opacity duration-500 rounded-lg"></div>
           <img 
-            src="./public/pik.png" 
+            src="/pik.png" 
             alt={PERSONAL_DETAILS.name} 
             className="relative w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out rounded-lg shadow-2xl" 
           />

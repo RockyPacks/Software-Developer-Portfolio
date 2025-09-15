@@ -18,7 +18,7 @@ export const PERSONAL_DETAILS = {
   linkedin: 'https://www.linkedin.com/in/morokolo-chueu-2148962a7',
   microsoftLearn: 'https://learn.microsoft.com/en-us/users/morokolochueu-6104/credentials?tab=credentials-tab',
   phone: '(072) 386-8628',
-  avatar: "/pik.png",
+  avatar: '/pik.png',
   cvPath: '/Chueu MDE Cap CV.pdf',
 };
 
