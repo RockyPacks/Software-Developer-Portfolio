@@ -19,7 +19,7 @@ export const PERSONAL_DETAILS = {
   microsoftLearn: 'https://learn.microsoft.com/en-us/users/morokolochueu-6104/credentials?tab=credentials-tab',
   phone: '(072) 386-8628',
   avatar: '/pik.png',
-  cvPath: '/Chueu MDE Cap CV.pdf',
+  cvPath: '/Chueu MDE Cap CV.docx',
 };
 
 export const PROJECTS: Project[] = [
