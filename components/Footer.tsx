@@ -13,6 +13,10 @@ const MicrosoftLearnIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
 );
 
+const CourseraIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+);
+
 const MailIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 );
@@ -29,6 +33,7 @@ const Footer: React.FC = () => {
           <a href={PERSONAL_DETAILS.github} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors"><GitHubIcon /></a>
           <a href={PERSONAL_DETAILS.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors"><LinkedInIcon /></a>
           <a href={PERSONAL_DETAILS.microsoftLearn} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Microsoft Learn Profile"><MicrosoftLearnIcon /></a>
+          <a href={PERSONAL_DETAILS.coursera} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Coursera Profile"><CourseraIcon /></a>
           <a href={`mailto:${PERSONAL_DETAILS.email}`} className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors"><MailIcon /></a>
         </div>
       </div>

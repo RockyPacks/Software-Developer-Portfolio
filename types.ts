@@ -30,6 +30,8 @@ export interface Certification {
   name: string;
   provider: string; // Changed to string for flexibility
   date: string;
+  credentialUrl?: string;
+  imageUrl?: string;
 }
 
 export interface SkillCategory {

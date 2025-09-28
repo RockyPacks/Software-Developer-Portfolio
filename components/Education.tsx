@@ -240,12 +240,59 @@ const CertificateCard: React.FC<{ cert: Certification }> = ({ cert }) => {
             default: return <GenericCertLogo />;
         }
     };
+    const isViewEnabled = Boolean(cert.credentialUrl);
     return (
-        <div className="bg-white dark:bg-secondary p-4 rounded-lg border border-gray-200 dark:border-border-color flex items-start space-x-4 transition-all duration-300 hover:shadow-md hover:border-blue-500 dark:hover:border-accent">
-            <div className="flex-shrink-0 pt-1">{renderLogo()}</div>
-            <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white transition-colors duration-300">{cert.name}</h3>
-                <p className="text-sm text-gray-500 dark:text-text-secondary transition-colors duration-300">{cert.date}</p>
+        <div className="bg-white dark:bg-secondary p-4 rounded-lg border border-gray-200 dark:border-border-color transition-all duration-300 hover:shadow-md hover:border-blue-500 dark:hover:border-accent">
+            <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 pt-1">{renderLogo()}</div>
+                <div className="flex-1">
+                    <h3 className="font-semibold text-gray-900 dark:text-white transition-colors duration-300">{cert.name}</h3>
+                    <p className="text-sm text-gray-500 dark:text-text-secondary transition-colors duration-300">{cert.date}</p>
+                </div>
+            </div>
+            <div className="mt-4">
+                {cert.imageUrl ? (
+                    cert.imageUrl.toLowerCase().endsWith('.pdf') ? (
+                        <iframe
+                            src={cert.imageUrl}
+                            title={`${cert.name} certificate preview`}
+                            className="w-full h-36 rounded-md border border-gray-200 dark:border-border-color"
+                            loading="lazy"
+                        />
+                    ) : (
+                        <img
+                            src={cert.imageUrl}
+                            alt={`${cert.name} certificate preview`}
+                            className="w-full h-36 object-cover rounded-md border border-gray-200 dark:border-border-color"
+                            loading="lazy"
+                        />
+                    )
+                ) : (
+                    <div className="w-full h-36 rounded-md border border-dashed border-gray-300 dark:border-border-color flex items-center justify-center text-sm text-gray-500 dark:text-text-secondary">
+                        Certificate preview placeholder
+                    </div>
+                )}
+            </div>
+            <div className="mt-4 flex justify-end">
+                {isViewEnabled ? (
+                    <a
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-3 py-2 text-sm font-semibold rounded-md bg-blue-600 text-white hover:bg-blue-700 dark:bg-accent dark:text-primary dark:hover:opacity-90 transition-colors duration-300"
+                    >
+                        View Certificate
+                    </a>
+                ) : (
+                    <button
+                        type="button"
+                        className="inline-flex items-center px-3 py-2 text-sm font-semibold rounded-md bg-gray-100 text-gray-500 dark:bg-border-color dark:text-text-secondary cursor-not-allowed"
+                        aria-disabled="true"
+                        disabled
+                    >
+                        View Certificate
+                    </button>
+                )}
             </div>
         </div>
     );
