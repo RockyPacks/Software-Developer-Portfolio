@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GoogleGenAI, Chat } from "@google/genai";
-import { AI_INTERVIEWER_CONTEXT } from '../constants';
+import { CHATBOT_SYSTEM_PROMPT } from '../constants';
 import type { ChatMessage } from '../types';
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
@@ -8,10 +8,10 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 const navRegex = /\[navigate_to:(#[a-zA-Z0-9_-]+)\]/;
 
 const placeholders = [
-  "Ask about my AI projects...",
-  "What are my strongest skills?",
-  "Tell me about his experience at CAPACITI...",
-  "Curious about my tech stack?",
+  "Ask me about my projects...",
+  "What are my key skills?",
+  "Tell me about my experience...",
+  "What technologies do I use?",
 ];
 
 const parseResponse = (text: string): string => {
@@ -108,7 +108,7 @@ const Chatbot: React.FC<{
           const newChat = ai.chats.create({
             model: 'gemini-2.5-flash',
             config: {
-              systemInstruction: AI_INTERVIEWER_CONTEXT,
+              systemInstruction: CHATBOT_SYSTEM_PROMPT,
             },
           });
           setChat(newChat);
@@ -194,7 +194,7 @@ const Chatbot: React.FC<{
     <div className="fixed bottom-0 right-0 z-50 m-4 sm:m-8 w-[calc(100%-2rem)] sm:w-96">
       <div className="bg-white dark:bg-secondary border border-gray-200 dark:border-border-color rounded-lg shadow-2xl shadow-black/20 flex flex-col h-[60vh] max-h-[700px] animate-slide-up transition-colors duration-300">
         <header className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-border-color transition-colors duration-300">
-          <h3 className="text-gray-900 dark:text-white font-bold transition-colors duration-300">AI Interviewer</h3>
+          <h3 className="text-gray-900 dark:text-white font-bold transition-colors duration-300">AI Assistant</h3>
           <button onClick={onClose} className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Close chat">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
@@ -237,5 +237,3 @@ const Chatbot: React.FC<{
     </div>
   );
 };
-
-export default Chatbot;
