@@ -237,3 +237,5 @@ const Chatbot: React.FC<{
     </div>
   );
 };
+
+export default Chatbot;
