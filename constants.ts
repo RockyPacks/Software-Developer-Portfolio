@@ -2,11 +2,11 @@ import type { NavLink, Project, ExperienceItem, EducationItem, SkillCategory, Ce
 
 export const NAV_LINKS: NavLink[] = [
   { name: '_hello', href: '#hello' },
-  { name: '_ai-interviewer', href: '#ai-interviewer' },
   { name: '_projects', href: '#projects' },
   { name: '_skills', href: '#skills' },
   { name: '_experience', href: '#experience' },
   { name: '_education', href: '#education' },
+  { name: '_contact', href: '#contact' },
 ];
 
 export const PERSONAL_DETAILS = {
@@ -19,8 +19,9 @@ export const PERSONAL_DETAILS = {
   microsoftLearn: 'https://learn.microsoft.com/en-us/users/morokolochueu-6104/credentials?tab=credentials-tab',
   coursera: 'https://www.coursera.org/user/3a76038132199d285b8160f47513d13',
   phone: '(072) 386-8628',
+  whatsapp: 'https://wa.me/27723868628',
   avatar: '/pik.png',
-  cvPath: '/Chueu MDE Cap CV.docx',
+  cvPath: '/Morokolo_Chueu_Software_Engineer.pdf',
 };
 
 export const PROJECTS: Project[] = [
@@ -208,11 +209,9 @@ export const BADGES = [
 
 export const SPONSORING_ORGS = ['Pietersburg Hospital', 'Snap N Go', 'Phinnet Security', 'Microsoft', 'Google', 'Tshwane University'];
 
-// Comprehensive context for the AI Interviewer
-export const AI_INTERVIEWER_CONTEXT = `
-You are an expert AI assistant for Morokolo Chueu, a Software Developer. Your role is to act as a virtual interviewer or guide for recruiters and visitors to his portfolio. 
-You are friendly, professional, and knowledgeable about all aspects of Morokolo's career. Your goal is to answer questions accurately based ONLY on the information provided below. 
-Do not invent information.
+export const CHATBOT_SYSTEM_PROMPT = `
+You are a helpful and friendly AI assistant for Morokolo Chueu's portfolio. 
+Your goal is to provide concise and accurate information based ONLY on the details provided below. Do not invent information.
 
 **Primary Information about Morokolo Chueu:**
 
@@ -234,15 +233,15 @@ Do not invent information.
 
 - **Education & Certifications:**
   - Main Qualification: ${EDUCATION[0].degree} from ${EDUCATION[0].institution} (${EDUCATION[0].date})
-  - Extensive certifications in Microsoft technologies, AI/Data Science, and Professional Development are available.
+  - He holds extensive certifications in Microsoft technologies, AI/Data Science, and Professional Development.
 
 **Portfolio Structure & Navigation:**
 - _hello: #hello
-- _ai-interviewer: #ai-interviewer
 - _projects: #projects
 - _skills: #skills
 - _experience: #experience
 - _education: #education
+- _contact: #contact
 
 **Your Instructions:**
 1.  **Be Concise & Professional:** Keep your answers brief, clear, and professional.

@@ -21,6 +21,12 @@ const MailIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 );
 
+const WhatsAppIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+);
+
 const Footer: React.FC = () => {
   return (
     <footer className="border-t border-gray-200 dark:border-border-color mt-16 py-8 pb-16 transition-colors duration-300">
@@ -35,6 +41,7 @@ const Footer: React.FC = () => {
           <a href={PERSONAL_DETAILS.microsoftLearn} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Microsoft Learn Profile"><MicrosoftLearnIcon /></a>
           <a href={PERSONAL_DETAILS.coursera} target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Coursera Profile"><CourseraIcon /></a>
           <a href={`mailto:${PERSONAL_DETAILS.email}`} className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors"><MailIcon /></a>
+          <a href="httpshttps://wa.me/27723868628" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-white transition-colors"><WhatsAppIcon /></a>
         </div>
       </div>
       <div className="text-center text-gray-400 dark:text-text-secondary text-xs mt-8 transition-colors duration-300">
